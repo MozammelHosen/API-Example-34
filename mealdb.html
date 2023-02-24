@@ -1,26 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meal DB</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<style>
+<!-- <style>
     .meal {
         background-color: aliceblue;
         margin: 10px;
         padding: 20px;
         border: 2px solid rgb(212, 10, 64);
     }
-</style>
+</style> -->
 
 <body>
-    <h1>Welcome to Meal DB In The World</h1>
-    <div id="mealDb">
+    <h1 class="text-5xl font-bold my-5 text-center">Welcome to Meal DB In The World</h1>
+    <section class="flex justify-center item-center my-5">
+        <input style="border:1px solid red " type="search" name="" id="searchField" class="p-3 rounded"
+            placeholder="Search for...">
+        <button onclick="searchbtn()" class="btn btn-primary">Button</button>
+    </section>
+    <div id="mealDb" class="grid grid-cols-3 gap-5">
 
     </div>
+    <section>
+        <input type="checkbox" id="mealdbModal" class="modal-toggle" />
+        <div class="modal">
+            <div class="modal-box relative">
+                <label for="mealdbModal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <h3 class="text-lg font-bold">Congratulations <span id="mealdbmodal1"></span></h3>
+                <div id="mealBody"></div>
+            </div>
+    </section>
     <script src="js/mealdb.js"></script>
 </body>
 
